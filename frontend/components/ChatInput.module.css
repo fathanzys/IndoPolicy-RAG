@@ -1,0 +1,100 @@
+﻿.container {
+  padding: 24px;
+  background: white;
+  border-top: 1px solid #E2E8F0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 20;
+}
+
+.inputWrapper {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input {
+  width: 100%;
+  padding: 16px 20px;
+  padding-right: 60px;
+  border-radius: 8px;
+  border: 1px solid #CBD5E1;
+  background: #F8FAFC;
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  outline: none;
+  transition: all 0.2s;
+}
+
+.input:focus {
+  border-color: var(--bi-blue-primary);
+  background: white;
+  box-shadow: 0 0 0 3px rgba(8, 61, 119, 0.1);
+}
+
+.sendButton {
+  position: absolute;
+  right: 10px;
+  background: var(--bi-blue-primary);
+  color: white;
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.sendButton:hover:not(:disabled) {
+  background: var(--bi-blue-dark);
+  transform: scale(1.05);
+}
+
+.sendButton:active:not(:disabled) {
+  transform: scale(0.95);
+}
+
+.sendButton:disabled {
+  background: #94A3B8;
+  cursor: not-allowed;
+}
+
+.loading {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.disclaimer {
+  text-align: center;
+  font-size: 0.7rem;
+  color: var(--text-secondary);
+  margin-top: 12px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 16px;
+  }
+
+  .input {
+    padding: 14px 16px;
+    padding-right: 50px;
+    font-size: 0.9rem;
+  }
+
+  .disclaimer {
+    font-size: 0.65rem;
+  }
+}

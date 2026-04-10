@@ -1,0 +1,106 @@
+﻿.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+.chatArea {
+  flex: 1;
+  overflow-y: auto;
+  padding: 30px;
+  padding-bottom: 140px;
+  background-color: var(--bg-main);
+}
+
+.emptyState {
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  color: var(--text-secondary);
+}
+
+.logoBig {
+  width: 80px;
+  height: 80px;
+  background: white;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  color: var(--bi-blue-primary);
+}
+
+.suggestions {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-top: 30px;
+  width: 100%;
+  max-width: 600px;
+}
+
+.suggestionCard {
+  background: white;
+  border: 1px solid #E2E8F0;
+  padding: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: left;
+}
+
+.suggestionCard:hover {
+  border-color: var(--bi-blue-primary);
+  box-shadow: 0 2px 4px rgba(8, 61, 119, 0.1);
+}
+
+.suggestionTitle {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--bi-blue-primary);
+  margin-bottom: 4px;
+}
+
+.suggestionDesc {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+.loadingIndicator {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 0;
+  width: 800px;
+  margin: 0 auto;
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  font-style: italic;
+}
+
+@media (max-width: 768px) {
+  .chatArea {
+    padding: 16px;
+    padding-bottom: 120px;
+  }
+
+  .suggestions {
+    grid-template-columns: 1fr;
+    padding: 0 10px;
+  }
+
+  .loadingIndicator {
+    width: 100%;
+    padding: 0 16px;
+  }
+
+  .emptyState p {
+    padding: 0 20px;
+  }
+}

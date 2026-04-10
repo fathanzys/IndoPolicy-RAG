@@ -1,0 +1,30 @@
+﻿:root {
+  /* BI Brand Colors */
+  --bi-blue-primary: #083D77;    /* Deep Corporate Blue */
+  --bi-blue-dark: #03254C;       /* Darker Blue */
+  --bi-gold: #D4AF37;            /* Elegant Gold */
+  
+  /* Backgrounds */
+  --bg-main: #F4F6F8;            /* Very light gray/blue tint */
+  --bg-white: #FFFFFF;
+  
+  /* Text */
+  --text-primary: #1E293B;
+  --text-secondary: #64748B;
+  --text-inverse: #FFFFFF;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  font-family: 'Inter', -apple-system, sans-serif;
+  height: 100vh;
+  overflow: hidden;
+}
+
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #CBD5E1; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #94A3B8; }
