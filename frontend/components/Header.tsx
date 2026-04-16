@@ -8,15 +8,13 @@ interface HeaderProps {
 export default function Header({ title, subtitle }: HeaderProps) {
     return (
         <header className={styles.header}>
-            <div>
+            <div className={styles.headerInfo}>
                 <h2 className={styles.headerTitle}>{title}</h2>
-                <p style={{ fontSize: "0.85rem", color: "var(--text-secondary)", marginTop: "4px" }}>
-                    {subtitle}
-                </p>
+                <p className={styles.headerSubtitle}>{subtitle}</p>
             </div>
             <div className={styles.headerStatus}>
                 <div className={styles.statusDot}></div>
-                System Online • Secure
+                System Online
             </div>
         </header>
     );

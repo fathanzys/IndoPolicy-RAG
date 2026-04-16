@@ -49,7 +49,7 @@ export default function Sidebar() {
                         alt="Bank Indonesia"
                         width={180}
                         height={55}
-                        style={{ objectFit: "contain", width: "auto", height: "auto", maxHeight: "45px" }}
+                        style={{ objectFit: "contain", width: "auto", height: "auto", maxHeight: "42px" }}
                         priority
                     />
                 </div>
@@ -61,17 +61,17 @@ export default function Sidebar() {
 
             <nav className={styles.menu}>
                 <div className={styles.menuItem} onClick={handleNewChat}>
-                    <MessageSquarePlus size={20} />
+                    <MessageSquarePlus size={19} />
                     <span>Percakapan Baru</span>
                 </div>
                 <div className={styles.menuItem} onClick={handleExportChat}>
-                    <Download size={20} />
+                    <Download size={19} />
                     <span>Ekspor ke TXT</span>
                 </div>
             </nav>
 
-            <div className={styles.menuItem} style={{ marginTop: 'auto', opacity: 0.5, fontSize: '0.8rem', cursor: 'default' }}>
-                <ShieldCheck size={16} />
+            <div className={styles.versionBadge}>
+                <ShieldCheck size={15} />
                 <span>v2.1.0 Enterprise Edition</span>
             </div>
         </aside>

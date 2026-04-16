@@ -1,4 +1,7 @@
-﻿.container {
+/* ============================================================
+   ChatBox — Container, Empty State, & Loading
+   ============================================================ */
+.container {
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -10,84 +13,213 @@
   flex: 1;
   overflow-y: auto;
   padding: 30px;
-  padding-bottom: 140px;
-  background-color: var(--bg-main);
+  padding-bottom: 160px;
 }
 
+/* ── Empty / Welcome State ────────────────────── */
 .emptyState {
   height: 80%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 20px;
-  color: var(--text-secondary);
+  gap: 16px;
+  animation: fadeInUp 0.6s var(--ease-out-expo);
 }
 
-.logoBig {
+.heroIcon {
   width: 80px;
   height: 80px;
-  background: white;
-  border-radius: 16px;
+  border-radius: var(--radius-lg);
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-  color: var(--bi-blue-primary);
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.15), rgba(99, 102, 241, 0.1));
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  color: var(--accent-blue);
+  box-shadow: 0 0 40px rgba(59, 130, 246, 0.1);
+  animation: float 4s ease-in-out infinite;
+  margin-bottom: 8px;
 }
 
+.welcomeTitle {
+  font-size: 1.4rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #E2E8F0, #60A5FA);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.3px;
+}
+
+.welcomeDesc {
+  font-size: 0.9rem;
+  max-width: 440px;
+  text-align: center;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.welcomeDesc b {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* ── Suggestion Cards ─────────────────────────── */
 .suggestions {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 12px;
-  margin-top: 30px;
+  margin-top: 28px;
   width: 100%;
-  max-width: 600px;
+  max-width: 560px;
 }
 
 .suggestionCard {
-  background: white;
-  border: 1px solid #E2E8F0;
-  padding: 16px;
-  border-radius: 8px;
+  background: var(--bg-card);
+  border: 1px solid var(--glass-border);
+  padding: 16px 18px;
+  border-radius: var(--radius-md);
   cursor: pointer;
-  transition: all 0.2s;
+  transition: all 0.3s var(--ease-out-expo);
   text-align: left;
+  position: relative;
+  overflow: hidden;
+}
+
+.suggestionCard::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.08), rgba(99, 102, 241, 0.04));
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
 .suggestionCard:hover {
-  border-color: var(--bi-blue-primary);
-  box-shadow: 0 2px 4px rgba(8, 61, 119, 0.1);
+  border-color: rgba(59, 130, 246, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(59, 130, 246, 0.1);
+}
+
+.suggestionCard:hover::before {
+  opacity: 1;
+}
+
+.suggestionCard:nth-child(1) { animation: fadeInUp 0.4s var(--ease-out-expo) 0.1s both; }
+.suggestionCard:nth-child(2) { animation: fadeInUp 0.4s var(--ease-out-expo) 0.2s both; }
+.suggestionCard:nth-child(3) { animation: fadeInUp 0.4s var(--ease-out-expo) 0.3s both; }
+.suggestionCard:nth-child(4) { animation: fadeInUp 0.4s var(--ease-out-expo) 0.4s both; }
+
+.suggestionIcon {
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+  position: relative;
+  z-index: 1;
 }
 
 .suggestionTitle {
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   font-weight: 600;
-  color: var(--bi-blue-primary);
+  color: var(--text-primary);
   margin-bottom: 4px;
+  position: relative;
+  z-index: 1;
 }
 
 .suggestionDesc {
-  font-size: 0.75rem;
+  font-size: 0.74rem;
   color: var(--text-secondary);
+  line-height: 1.4;
+  position: relative;
+  z-index: 1;
 }
 
+/* ── Loading Indicator (Typing Dots) ──────────── */
 .loadingIndicator {
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 10px 0;
-  width: 800px;
+  gap: 14px;
+  padding: 16px 0;
+  max-width: 800px;
   margin: 0 auto;
+  animation: fadeInUp 0.3s ease-out;
+}
+
+.typingDots {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: var(--bg-card);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-full);
+  padding: 10px 18px;
+}
+
+.typingDots span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent-blue);
+  animation: dotBounce 1.4s ease-in-out infinite;
+}
+
+.typingDots span:nth-child(2) {
+  animation-delay: 0.16s;
+}
+
+.typingDots span:nth-child(3) {
+  animation-delay: 0.32s;
+}
+
+.loadingText {
+  font-size: 0.82rem;
   color: var(--text-secondary);
-  font-size: 0.85rem;
   font-style: italic;
 }
 
+/* ── Suggested Questions ──────────────────────── */
+.followUpContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+  padding: 0 0 10px 52px; /* sesuaikan dengan avatar offset */
+  animation: fadeIn 0.4s ease-out;
+}
+
+.suggestionChip {
+  background: rgba(30, 41, 59, 0.4);
+  border: 1px solid var(--glass-border);
+  color: var(--text-secondary);
+  padding: 8px 16px;
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.2s var(--ease-out-expo);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.suggestionChip:hover {
+  background: rgba(59, 130, 246, 0.1);
+  border-color: rgba(59, 130, 246, 0.3);
+  color: var(--accent-blue);
+  transform: translateY(-1px);
+}
+
+.suggestionChip i {
+  font-size: 0.9em;
+  opacity: 0.7;
+}
+
+/* ── Responsive ───────────────────────────────── */
 @media (max-width: 768px) {
   .chatArea {
     padding: 16px;
-    padding-bottom: 120px;
+    padding-bottom: 140px;
   }
 
   .suggestions {
@@ -97,10 +229,14 @@
 
   .loadingIndicator {
     width: 100%;
+    padding: 12px 16px;
+  }
+
+  .emptyState {
     padding: 0 16px;
   }
 
-  .emptyState p {
-    padding: 0 20px;
+  .welcomeTitle {
+    font-size: 1.2rem;
   }
 }

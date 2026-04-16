@@ -1,30 +1,184 @@
-﻿:root {
-  /* BI Brand Colors */
-  --bi-blue-primary: #083D77;    /* Deep Corporate Blue */
-  --bi-blue-dark: #03254C;       /* Darker Blue */
-  --bi-gold: #D4AF37;            /* Elegant Gold */
-  
-  /* Backgrounds */
-  --bg-main: #F4F6F8;            /* Very light gray/blue tint */
-  --bg-white: #FFFFFF;
-  
-  /* Text */
-  --text-primary: #1E293B;
-  --text-secondary: #64748B;
+/* ============================================================
+   IndoPolicy RAG — Premium Dark Design System
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  /* ── Brand ───────────────────────────────────── */
+  --bi-blue-primary: #083D77;
+  --bi-blue-dark: #03254C;
+  --bi-blue-deep: #011627;
+  --bi-gold: #D4AF37;
+  --bi-gold-light: #E8C547;
+
+  /* ── Dark Theme Palette ──────────────────────── */
+  --bg-app: #0A0F1C;
+  --bg-sidebar: rgba(8, 16, 35, 0.85);
+  --bg-surface: rgba(15, 23, 42, 0.6);
+  --bg-surface-solid: #111827;
+  --bg-card: rgba(20, 30, 55, 0.5);
+  --bg-card-hover: rgba(30, 45, 75, 0.6);
+  --bg-input: rgba(15, 23, 42, 0.8);
+
+  /* ── Glass ───────────────────────────────────── */
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-border-hover: rgba(255, 255, 255, 0.15);
+  --glass-shine: rgba(255, 255, 255, 0.03);
+  --glass-blur: 16px;
+
+  /* ── Text ────────────────────────────────────── */
+  --text-primary: #E2E8F0;
+  --text-secondary: #94A3B8;
+  --text-tertiary: #64748B;
   --text-inverse: #FFFFFF;
+  --text-accent: #60A5FA;
+
+  /* ── Accent Colors ──────────────────────────── */
+  --accent-blue: #3B82F6;
+  --accent-blue-glow: rgba(59, 130, 246, 0.25);
+  --accent-indigo: #6366F1;
+  --accent-emerald: #10B981;
+  --accent-amber: #F59E0B;
+  --accent-rose: #F43F5E;
+
+  /* ── Gradients ──────────────────────────────── */
+  --gradient-brand: linear-gradient(135deg, #083D77 0%, #0C4E99 50%, #1565C0 100%);
+  --gradient-gold: linear-gradient(135deg, #D4AF37, #FFD700, #E8C547);
+  --gradient-user-bubble: linear-gradient(135deg, #1E40AF 0%, #3B82F6 100%);
+  --gradient-glow: radial-gradient(ellipse at 50% 0%, rgba(59, 130, 246, 0.15), transparent 60%);
+  --gradient-mesh: radial-gradient(at 20% 80%, rgba(8, 61, 119, 0.12) 0%, transparent 50%),
+                   radial-gradient(at 80% 20%, rgba(99, 102, 241, 0.08) 0%, transparent 50%),
+                   radial-gradient(at 50% 50%, rgba(212, 175, 55, 0.04) 0%, transparent 60%);
+
+  /* ── Shadows ────────────────────────────────── */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.5);
+  --shadow-glow-blue: 0 0 20px rgba(59, 130, 246, 0.2);
+  --shadow-glow-gold: 0 0 20px rgba(212, 175, 55, 0.15);
+
+  /* ── Radius ─────────────────────────────────── */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+
+  /* ── Transitions ────────────────────────────── */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
+/* ── Reset ────────────────────────────────────── */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
 body {
-  background-color: var(--bg-main);
+  background-color: var(--bg-app);
   color: var(--text-primary);
-  font-family: 'Inter', -apple-system, sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   height: 100vh;
   overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-::-webkit-scrollbar { width: 8px; }
-::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { background: #CBD5E1; border-radius: 4px; }
-::-webkit-scrollbar-thumb:hover { background: #94A3B8; }
+/* ── Scrollbar ────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.2);
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.35);
+}
+
+/* ── Global Keyframes ─────────────────────────── */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(59, 130, 246, 0);
+  }
+}
+
+@keyframes dotBounce {
+  0%, 80%, 100% {
+    transform: scale(0.6);
+    opacity: 0.4;
+  }
+  40% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes spin {
+  100% { transform: rotate(360deg); }
+}
+
+/* ── Utility ──────────────────────────────────── */
+.spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(148, 163, 184, 0.3);
+  border-top-color: var(--accent-blue);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}

@@ -1,0 +1,23 @@
+PROSEDUR SELF GOVERNANCE OBSERVATION (SGO) - BANK INDONESIA
+
+1. PENDAHULUAN
+Self Governance Observation (SGO) adalah mekanisme pengawasan mandiri yang dilakukan oleh satuan kerja di Bank Indonesia untuk memastikan kepatuhan terhadap regulasi eksternal dan kebijakan internal. SGO bertujuan untuk mendeteksi potensi risiko kepatuhan sedini mungkin.
+
+2. STRUKTUR TATA KELOLA RISIKO
+Struktur tata kelola risiko di Bank Indonesia terdiri dari tiga lini pertahanan (Three Lines of Defense):
+- Lini Pertama: Satuan Kerja operasional yang bertanggung jawab mengelola risiko secara langsung.
+- Lini Kedua: Departemen Manajemen Risiko dan Kepatuhan yang melakukan pengawasan dan penetapan kebijakan.
+- Lini Ketiga: Departemen Audit Internal yang memberikan asuransi independen.
+
+3. PROSEDUR AUDIT SGO
+Prosedur audit internal terkait SGO meliputi:
+a. Perencanaan: Penentuan ruang lingkup dan objek observasi berdasarkan profil risiko.
+b. Pelaksanaan: Pengumpulan bukti, wawancara, dan pengujian pengendalian.
+c. Pelaporan: Penyusunan Laporan Hasil Observasi (LHO) yang berisi temuan dan rekomendasi perbaikan.
+d. Tindak Lanjut: Monitoring pemenuhan janji perbaikan oleh satuan kerja terkait.
+
+4. KODE ETIK DAN SANKSI
+Setiap pegawai Bank Indonesia wajib mematuhi Kode Etik Bank Indonesia. Pelanggaran terhadap kebijakan internal dapat dikenakan sanksi disiplin mulai dari teguran lisan, tertulis, hingga pemberhentian tidak dengan hormat, tergantung pada bobot pelanggaran yang dilakukan.
+
+5. MANDAT UU P2SK
+Berdasarkan Undang-Undang Pengembangan dan Penguatan Sektor Keuangan (UU P2SK), Bank Indonesia memiliki mandat untuk memperkuat koordinasi pengawasan sektor keuangan dan memastikan stabilitas sistem keuangan nasional melalui penguatan tata kelola internal yang akuntabel.

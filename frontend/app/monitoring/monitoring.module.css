@@ -1,0 +1,132 @@
+.container {
+    padding: 32px;
+    max-width: 1200px;
+    margin: 0 auto;
+    animation: fadeIn 0.6s var(--ease-out-expo);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 24px;
+    margin-bottom: 40px;
+}
+
+.card {
+    background: var(--bg-surface);
+    backdrop-filter: blur(var(--glass-blur));
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-lg);
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.card:hover {
+    border-color: var(--glass-border-hover);
+    transform: translateY(-4px);
+}
+
+.cardTitle {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-tertiary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.cardValue {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    background: linear-gradient(135deg, var(--text-primary), var(--text-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.cardValueGreen {
+    color: var(--accent-emerald);
+    background: none;
+    -webkit-text-fill-color: var(--accent-emerald);
+}
+
+.cardSub {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+}
+
+.historySection {
+    margin-top: 48px;
+}
+
+.sectionHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+}
+
+.sectionTitle {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.tableContainer {
+    background: var(--bg-surface);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.table th {
+    padding: 16px 24px;
+    background: rgba(255, 255, 255, 0.03);
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text-tertiary);
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.table td {
+    padding: 16px 24px;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.badge {
+    padding: 4px 10px;
+    border-radius: var(--radius-full);
+    font-size: 0.7rem;
+    font-weight: 600;
+}
+
+.badgeUp {
+    background: rgba(16, 185, 129, 0.1);
+    color: var(--accent-emerald);
+    border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.badgeDown {
+    background: rgba(244, 63, 94, 0.1);
+    color: var(--accent-rose);
+    border: 1px solid rgba(244, 63, 94, 0.2);
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+    .cardValue {
+        font-size: 1.8rem;
+    }
+}
